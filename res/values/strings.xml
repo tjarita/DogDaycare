@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="add_remove">Remove</string><string name="add_manager">Manager privileges?</string><string name="app_name">Dog Daycare</string>
+    <string name="entry_sales">Sales</string>
+    <string name="entry_daycare">Daycare</string>
+    <string name="entry_admin_setting">Manager settings</string>
+    <string name="entry_register">Register Owner</string><string name="pin_ask">Please enter your 4 digit PIN</string>
+    <string name="pin_enter">Enter</string>
+    <string name="dbtools_employees">Employees</string>
+    <string name="dbtools_title">Add Employee</string>
+    <string name="dbtools_first">First Name</string>
+    <string name="dbtools_last">Last Name</string>
+    <string name="dbtools_phone">Phone</string>
+    <string name="dbtools_email">Email</string>
+    <string name="dbtools_password">Password</string>
+    <string name="dbtools_address">Home Address</string>
+    <string name="dbtools_save">Save</string>
+    <string name="dbtools_add">Add</string>
+    <string name="dbtools_ID">ID : </string>
+    
+    <string name="single_emp_update">Update</string>
+    
+    
+    <string name="sales_newCustomer">New Customer</string>
+    <string name="sales_newAnimal">New Animal</string>
+    <string name="sales_newAppointment">New Appointment</string>
+
+</resources>

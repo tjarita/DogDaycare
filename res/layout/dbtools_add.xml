@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCCCCC"
+    android:orientation="vertical"
+    android:paddingTop="1dp" >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:background="#FFFFFF"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/dbtools_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/dbtools_first" />
+
+    <EditText
+        android:id="@+id/addEmp_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dbtools_add"
+        android:layout_below="@+id/dbtools_add"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/dbtools_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_first"
+        android:layout_below="@+id/addEmp_first"
+        android:text="@string/dbtools_last"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/addEmp_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dbtools_lastName"
+        android:layout_below="@+id/dbtools_lastName"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/dbtools_EmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_last"
+        android:layout_below="@+id/addEmp_last"
+        android:text="@string/dbtools_email"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/addEmp_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dbtools_EmailAddress"
+        android:layout_below="@+id/dbtools_EmailAddress"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/dbtools_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_email"
+        android:layout_centerVertical="true"
+        android:text="@string/dbtools_phone"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/addEmp_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dbtools_Phone"
+        android:layout_below="@+id/dbtools_Phone"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/dbtools_HomeAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_phone"
+        android:layout_below="@+id/addEmp_phone"
+        android:text="@string/dbtools_address"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/addEmp_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dbtools_HomeAddress"
+        android:layout_below="@+id/dbtools_HomeAddress"
+        android:ems="10"
+        android:inputType="text" />
+
+    <CheckBox
+        android:id="@+id/addEmp_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_email"
+        android:layout_below="@+id/addEmp_email"
+        android:text="@string/add_manager" />
+
+    <TextView
+        android:id="@+id/addEmp_text_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_address"
+        android:layout_below="@+id/addEmp_address"
+        android:layout_marginTop="34dp"
+        android:text="@string/dbtools_ID"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/addEmp_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addEmp_text_ID"
+        android:layout_alignBottom="@+id/addEmp_text_ID"
+        android:layout_toRightOf="@+id/dbtools_Phone"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/addEmp_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_text_ID"
+        android:layout_below="@+id/addEmp_ID"
+        android:layout_marginTop="22dp"
+        android:onClick="addNewStudent"
+        android:text="@string/dbtools_save" />
+
+    <Button
+        android:id="@+id/addEmp_delete"
+        style="android:buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addEmp_save"
+        android:layout_alignBottom="@+id/addEmp_save"
+        android:layout_alignRight="@+id/addEmp_address"
+        android:text="@string/add_remove" />
+
+</RelativeLayout>
+        
+
+</LinearLayout>
+
+

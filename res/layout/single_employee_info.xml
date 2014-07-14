@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/single_emp_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/single_emp_text_last"
+        android:layout_toRightOf="@+id/single_emp_text_last"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/single_emp_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/single_emp_text_first"
+        android:layout_toRightOf="@+id/single_emp_text_first"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/single_emp_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/single_emp_text_email"
+        android:layout_alignBottom="@+id/single_emp_text_email"
+        android:layout_toRightOf="@+id/single_emp_text_phone"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/single_emp_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/single_emp_text_phone"
+        android:layout_alignLeft="@+id/single_emp_email"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/single_emp_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/single_emp_text_home"
+        android:layout_toRightOf="@+id/single_emp_text_home"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/single_emp_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="56dp"
+        android:layout_toRightOf="@+id/single_emp_text_ID"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/single_emp_text_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/single_emp_ID"
+        android:layout_alignParentLeft="true"
+        android:text="@string/dbtools_ID"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/single_emp_text_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/single_emp_text_ID"
+        android:layout_marginTop="31dp"
+        android:layout_toLeftOf="@+id/single_emp_first"
+        android:text="@string/dbtools_last"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/single_emp_text_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/single_emp_last"
+        android:layout_marginTop="25dp"
+        android:text="@string/dbtools_first"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/single_emp_text_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/single_emp_text_last"
+        android:layout_below="@+id/single_emp_first"
+        android:layout_marginTop="39dp"
+        android:text="@string/dbtools_email"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/single_emp_text_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/dbtools_phone"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/single_emp_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/single_emp_ID"
+        android:layout_below="@+id/single_emp_home"
+        android:layout_marginTop="51dp"
+        android:text="@string/single_emp_update" />
+
+    <TextView
+        android:id="@+id/single_emp_text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/single_emp_phone"
+        android:layout_marginTop="21dp"
+        android:text="@string/dbtools_address"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

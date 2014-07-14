@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tjarita.dogdaycare"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.tjarita.dogdaycare.Splash"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.Entry"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.ENTRY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.Pin"
+            android:label="User PIN" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.PIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.ListEmployees"
+            android:label="Employee List" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.LISTEMPLOYEES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.AddEmployees"
+            android:label="Employee Add" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.ADDEMPLOYEES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.ViewSingleEmployee"
+            android:label="Employee View" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.VIEWSINGLEEMPLOYEE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

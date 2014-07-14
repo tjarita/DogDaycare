@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <Button
+        android:id="@+id/sales_newCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/sales_newAppointment"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/sales_newCustomer" />
+
+    <Button
+        android:id="@+id/sales_newAnimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/sales_newCustomer"
+        android:layout_below="@+id/sales_newCustomer"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/sales_newAnimal" />
+
+    <Button
+        android:id="@+id/sales_newAppointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sales_newAnimal"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/sales_newAppointment" />
+
+    <Button
+        android:id="@+id/entry_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/entry_admin_setting" />
+
+</RelativeLayout>
