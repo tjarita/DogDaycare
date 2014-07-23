@@ -20,11 +20,20 @@ public class ListEmployees extends ListActivity {
 	TextView employeeID;
 
 	DBemployee dbTools = new DBemployee(this);
+	
+	
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbtools);
+	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Intent intent = getIntent();
+		TextView title = (TextView) findViewById(R.id.dbtools_title);
+		
 		// ----Add Employee----
 		Button add = (Button) findViewById(R.id.listEmp_Add);
 		add.setOnClickListener(new View.OnClickListener() {
@@ -36,14 +45,15 @@ public class ListEmployees extends ListActivity {
 			}
 		});
 
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-
-		final ArrayList<HashMap<String, String>> employeeList = dbTools
-				.getAllEmployees();
+		//---- Retrive Query----
+		final ArrayList<HashMap<String, String>> employeeList;
+		if (intent.hasExtra("customer")){
+			employeeList = dbTools.getAllCustomers();
+			add.setVisibility(View.GONE);
+			
+		}
+		else
+			employeeList = dbTools.getAllEmployees();
 
 		// ----Populate List----
 		if (employeeList.size() != 0) {
@@ -66,14 +76,7 @@ public class ListEmployees extends ListActivity {
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
-					// selected Employee
-					final String empName = employeeList.get(position)
-							.get("lastName").toString()
-							+ ", "
-							+ employeeList.get(position).get("firstName")
-									.toString();
-
-					// toast Name
+					// toast selected employee name
 					Toast.makeText(
 							getApplicationContext(),
 							employeeList.get(position).get("lastName")
@@ -82,8 +85,7 @@ public class ListEmployees extends ListActivity {
 											.get("firstName").toString(),
 							Toast.LENGTH_SHORT).show();
 
-					Intent i = new Intent(
-							"com.tjarita.dogdaycare.ADDEMPLOYEES");
+					Intent i = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
 					i.putExtra("info", employeeList.get(position));
 					i.putExtra("update", true);
 					startActivity(i);
@@ -92,6 +94,13 @@ public class ListEmployees extends ListActivity {
 
 			});
 		}
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		finish();
 	}
 
 }

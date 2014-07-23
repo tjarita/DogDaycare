@@ -5,36 +5,36 @@
     tools:context="${packageName}.${activityClass}" >
 
     <Button
-        android:id="@+id/sales_newCustomer"
+        android:id="@+id/entry_newCustomer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/sales_newAppointment"
+        android:layout_alignRight="@+id/entry_newAppointment"
         android:minHeight="80dp"
         android:minWidth="156dp"
-        android:text="@string/sales_newCustomer" />
+        android:text="@string/entry_newCustomer" />
 
     <Button
-        android:id="@+id/sales_newAnimal"
+        android:id="@+id/entry_newAnimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/sales_newCustomer"
-        android:layout_below="@+id/sales_newCustomer"
+        android:layout_alignRight="@+id/entry_newCustomer"
+        android:layout_below="@+id/entry_newCustomer"
         android:minHeight="80dp"
         android:minWidth="156dp"
-        android:text="@string/sales_newAnimal" />
+        android:text="@string/entry_newAnimal" />
 
     <Button
-        android:id="@+id/sales_newAppointment"
+        android:id="@+id/entry_newAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/sales_newAnimal"
+        android:layout_below="@+id/entry_newAnimal"
         android:minHeight="80dp"
         android:minWidth="156dp"
-        android:text="@string/sales_newAppointment" />
+        android:text="@string/entry_newAppointment" />
 
     <Button
         android:id="@+id/entry_admin"
@@ -45,5 +45,36 @@
         android:minHeight="80dp"
         android:minWidth="156dp"
         android:text="@string/entry_admin_setting" />
+
+    <Button
+        android:id="@+id/entry_viewCustomers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/entry_newAnimal"
+        android:layout_toRightOf="@+id/entry_newCustomer"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/entry_viewCustomers" />
+
+    <Button
+        android:id="@+id/entry_viewAnimals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/entry_newAppointment"
+        android:layout_alignLeft="@+id/entry_viewCustomers"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/entry_viewAnimals" />
+
+    <Button
+        android:id="@+id/entry_viewAppointments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/entry_newAppointment"
+        android:layout_alignBottom="@+id/entry_newAppointment"
+        android:layout_toRightOf="@+id/entry_newAppointment"
+        android:minHeight="80dp"
+        android:minWidth="156dp"
+        android:text="@string/entry_viewAppointment" />
 
 </RelativeLayout>

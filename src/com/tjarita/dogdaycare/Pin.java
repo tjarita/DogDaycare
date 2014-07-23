@@ -11,26 +11,27 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Pin extends Activity{
-
+	DBemployee dbtools = new DBemployee(this);
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pin);
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		final DBemployee dbtools = new DBemployee(this);
-		final EditText password = (EditText) findViewById(R.id.pin_password);
-		password.setText("");
-		
 		
 		if(dbtools.getAllEmployees().size() == 0){
 			Intent initial = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
 			initial.putExtra("first", true);
 			startActivity(initial);
 		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		final EditText password = (EditText) findViewById(R.id.pin_password);
+		password.setText("");
+		
+		
+	
 		
 		Button enter = (Button) findViewById(R.id.pin_enter);
 		enter.setOnClickListener(new View.OnClickListener() {

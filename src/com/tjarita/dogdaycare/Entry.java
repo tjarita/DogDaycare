@@ -14,73 +14,74 @@ public class Entry extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+
 		Button settings = (Button) findViewById(R.id.entry_admin);
-//		Button customer = (Button) findViewById(R.id.entry_registerOwner);
+		// Button customer = (Button) findViewById(R.id.entry_registerOwner);
 		settings.setVisibility(View.GONE);
-		
+
 		Intent intent = getIntent();
-		
-		//----Manager Settings----
-		if(intent.getStringExtra("admin").contains("1"))
+
+		// ----Manager Settings----
+		if (intent.getStringExtra("admin").contains("1"))
 			settings.setVisibility(View.VISIBLE);
 		settings.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent s = new Intent("com.tjarita.dogdaycare.LISTEMPLOYEES");
 				startActivity(s);
-				
+
 			}
 		});
-		
-		//----Add Customer----
-		Button customer = (Button) findViewById(R.id.sales_newCustomer);
+
+		// ----Add Customer----
+		Button customer = (Button) findViewById(R.id.entry_newCustomer);
 		customer.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent o = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
-				o.putExtra("customer", true);
-				startActivity(o);
+				Intent ac = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
+				ac.putExtra("customer", true);
+				startActivity(ac);
 			}
 		});
-		
-		
-		//----Add Animal----
-		Button animal = (Button) findViewById(R.id.sales_newAnimal);
+
+		// ----View Customer----
+		Button vcustomer = (Button) findViewById(R.id.entry_viewCustomers);
+		vcustomer.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent vc = new Intent("com.tjarita.dogdaycare.LISTEMPLOYEES");
+				vc.putExtra("customer", true);
+				startActivity(vc);
+			}
+		});
+
+		// ----Add Animal----
+		Button animal = (Button) findViewById(R.id.entry_newAnimal);
 		animal.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent o = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
-				o.putExtra("animal", true);
-				startActivity(o);
+				Intent aa = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
+				aa.putExtra("animal", true);
+				startActivity(aa);
 			}
 		});
-		
-		//----Add Appointment----
-		Button appointment = (Button) findViewById(R.id.sales_newAppointment);
+
+		// ----Add Appointment----
+		Button appointment = (Button) findViewById(R.id.entry_newAppointment);
 		appointment.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent o = new Intent("com.tjarita.dogdaycare.ADDAPPOINTMENT");
-//				o.putExtra("customer", true);
-				startActivity(o);
+				Intent aap = new Intent("com.tjarita.dogdaycare.ADDAPPOINTMENT");
+				aap.putExtra("customer", true);
+				startActivity(aap);
 			}
 		});
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

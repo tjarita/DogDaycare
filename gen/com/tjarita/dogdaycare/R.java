@@ -15,7 +15,7 @@ public final class R {
         public static final int loading=0x7f020001;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f060019;
+        public static final int RelativeLayout1=0x7f06001c;
         public static final int addEmp_ID=0x7f060010;
         public static final int addEmp_address=0x7f06000d;
         public static final int addEmp_delete=0x7f060012;
@@ -35,26 +35,16 @@ public final class R {
         public static final int employeeID=0x7f060013;
         public static final int employeeName=0x7f060014;
         public static final int entry_admin=0x7f060018;
+        public static final int entry_newAnimal=0x7f060017;
+        public static final int entry_newAppointment=0x7f060016;
+        public static final int entry_newCustomer=0x7f060015;
+        public static final int entry_viewAnimals=0x7f06001a;
+        public static final int entry_viewAppointments=0x7f06001b;
+        public static final int entry_viewCustomers=0x7f060019;
         public static final int listEmp_Add=0x7f060002;
-        public static final int pin_ask=0x7f06001a;
-        public static final int pin_enter=0x7f06001b;
-        public static final int pin_password=0x7f06001c;
-        public static final int sales_newAnimal=0x7f060017;
-        public static final int sales_newAppointment=0x7f060016;
-        public static final int sales_newCustomer=0x7f060015;
-        public static final int single_emp_ID=0x7f060027;
-        public static final int single_emp_email=0x7f060021;
-        public static final int single_emp_first=0x7f06001f;
-        public static final int single_emp_home=0x7f060025;
-        public static final int single_emp_last=0x7f06001d;
-        public static final int single_emp_phone=0x7f060024;
-        public static final int single_emp_save=0x7f060029;
-        public static final int single_emp_text_ID=0x7f060028;
-        public static final int single_emp_text_email=0x7f060022;
-        public static final int single_emp_text_first=0x7f060020;
-        public static final int single_emp_text_home=0x7f060026;
-        public static final int single_emp_text_last=0x7f06001e;
-        public static final int single_emp_text_phone=0x7f060023;
+        public static final int pin_ask=0x7f06001d;
+        public static final int pin_enter=0x7f06001e;
+        public static final int pin_password=0x7f06001f;
         public static final int tableRow1=0x7f060000;
         public static final int tableRow2=0x7f060003;
     }
@@ -64,35 +54,36 @@ public final class R {
         public static final int dbtools_entry=0x7f030002;
         public static final int main=0x7f030003;
         public static final int pin=0x7f030004;
-        public static final int sales=0x7f030005;
-        public static final int single_employee_info=0x7f030006;
-        public static final int splash=0x7f030007;
+        public static final int splash=0x7f030005;
     }
     public static final class string {
         public static final int add_manager=0x7f040001;
         public static final int add_remove=0x7f040000;
         public static final int app_name=0x7f040002;
-        public static final int dbtools_ID=0x7f040013;
-        public static final int dbtools_add=0x7f040012;
-        public static final int dbtools_address=0x7f040010;
-        public static final int dbtools_email=0x7f04000e;
-        public static final int dbtools_employees=0x7f040009;
-        public static final int dbtools_first=0x7f04000b;
-        public static final int dbtools_last=0x7f04000c;
-        public static final int dbtools_password=0x7f04000f;
-        public static final int dbtools_phone=0x7f04000d;
-        public static final int dbtools_save=0x7f040011;
-        public static final int dbtools_title=0x7f04000a;
+        public static final int dbtools_ID=0x7f040016;
+        public static final int dbtools_add=0x7f040015;
+        public static final int dbtools_address=0x7f040013;
+        public static final int dbtools_email=0x7f040011;
+        public static final int dbtools_employees=0x7f04000c;
+        public static final int dbtools_first=0x7f04000e;
+        public static final int dbtools_last=0x7f04000f;
+        public static final int dbtools_password=0x7f040012;
+        public static final int dbtools_phone=0x7f040010;
+        public static final int dbtools_save=0x7f040014;
+        public static final int dbtools_title=0x7f04000d;
         public static final int entry_admin_setting=0x7f040005;
         public static final int entry_daycare=0x7f040004;
+        public static final int entry_newAnimal=0x7f040009;
+        public static final int entry_newAppointment=0x7f040007;
+        public static final int entry_newCustomer=0x7f040008;
         public static final int entry_register=0x7f040006;
         public static final int entry_sales=0x7f040003;
-        public static final int pin_ask=0x7f040007;
-        public static final int pin_enter=0x7f040008;
-        public static final int sales_newAnimal=0x7f040016;
-        public static final int sales_newAppointment=0x7f040017;
-        public static final int sales_newCustomer=0x7f040015;
-        public static final int single_emp_update=0x7f040014;
+        public static final int entry_viewAnimals=0x7f040019;
+        public static final int entry_viewAppointment=0x7f04001a;
+        public static final int entry_viewCustomers=0x7f040018;
+        public static final int pin_ask=0x7f04000a;
+        public static final int pin_enter=0x7f04000b;
+        public static final int single_emp_update=0x7f040017;
     }
     public static final class style {
         /** 

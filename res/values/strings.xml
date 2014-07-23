@@ -5,7 +5,7 @@
     <string name="entry_sales">Sales</string>
     <string name="entry_daycare">Daycare</string>
     <string name="entry_admin_setting">Manager settings</string>
-    <string name="entry_register">Register Owner</string><string name="pin_ask">Please enter your 4 digit PIN</string>
+    <string name="entry_register">Register Owner</string><string name="entry_newAppointment">New Appointment</string><string name="entry_newCustomer">New Customer</string><string name="entry_newAnimal">New Animal</string><string name="pin_ask">Please enter your 4 digit PIN</string>
     <string name="pin_enter">Enter</string>
     <string name="dbtools_employees">Employees</string>
     <string name="dbtools_title">Add Employee</string>
@@ -22,8 +22,11 @@
     <string name="single_emp_update">Update</string>
     
     
-    <string name="sales_newCustomer">New Customer</string>
-    <string name="sales_newAnimal">New Animal</string>
-    <string name="sales_newAppointment">New Appointment</string>
+    
+    
+    
+    <string name="entry_viewCustomers">Customers</string>
+    <string name="entry_viewAnimals">Animals</string>
+    <string name="entry_viewAppointment">Appointments</string>
 
 </resources>

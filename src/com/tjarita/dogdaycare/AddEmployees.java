@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 public class AddEmployees extends Activity {
 	DBemployee dbtools = new DBemployee(this);
+	int id;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +36,15 @@ public class AddEmployees extends Activity {
 		final CheckBox admin = (CheckBox) findViewById(R.id.addEmp_manager);
 		final TextView employeeID = (TextView) findViewById(R.id.addEmp_ID);
 		final TextView employeeText = (TextView) findViewById(R.id.addEmp_text_ID);
+		id = randomInt(1000, 1999);
 
-		// ----Create temp ID----
-		int temp = randomInt(1000, 9999);
-		employeeID.setText(Integer.toString(temp));
-
-		// ----Update Employee----
 		final Intent intent = getIntent();
 		HashMap<String, String> update = (HashMap<String, String>) intent
 				.getSerializableExtra("info");
 
+		// ----Update Employee----
 		if (intent.hasExtra("info")) {
-			temp = Integer.parseInt(update.get("ID"));
+			id = Integer.parseInt(update.get("ID"));
 			employeeID.setText(update.get("ID"));
 			if (update.get("admin").contains("1")) {
 				admin.setChecked(true);
@@ -56,14 +54,15 @@ public class AddEmployees extends Activity {
 			email.setText(update.get("email"));
 			phone.setText(update.get("phoneNumber"));
 			address.setText(update.get("home"));
-		}
-		if (intent.hasExtra("first"))
-			admin.setChecked((true));
-		else {
+		} else if (intent.hasExtra("customer")){
+			id = randomInt(10000, 99999);
 			admin.setVisibility(View.GONE);
 		}
 
-		final int id = temp;
+		if (intent.hasExtra("first"))
+			admin.setChecked((true));
+		employeeID.setText(Integer.toString(id));
+
 		Button save = (Button) findViewById(R.id.addEmp_save);
 		save.setOnClickListener(new View.OnClickListener() {
 
@@ -74,22 +73,18 @@ public class AddEmployees extends Activity {
 					info.put("admin", "1");
 					info.put("employee", "1");
 					info.put("customer", "0");
-					info.put("animal", "0");
+
+					Toast.makeText(getApplicationContext(), "insert admin",
+							Toast.LENGTH_SHORT).show();
+
 				} else if (intent.hasExtra("customer")) {
 					info.put("admin", "0");
 					info.put("employee", "0");
 					info.put("customer", "1");
-					info.put("animal", "0");
-				} else if (intent.hasExtra("animal")) {
-					info.put("admin", "0");
-					info.put("employee", "0");
-					info.put("customer", "0");
-					info.put("animal", "1");
 				} else {
 					info.put("admin", "0");
 					info.put("employee", "1");
 					info.put("customer", "0");
-					info.put("animal", "0");
 				}
 
 				info.put("ID", Integer.toString(id));
@@ -104,22 +99,6 @@ public class AddEmployees extends Activity {
 				else
 					dbtools.insertEmployee(info);
 
-				// Toast.makeText(getApplicationContext(), "ID " +
-				// info.get("employeeID").toString(),
-				// Toast.LENGTH_SHORT).show();
-				// Toast.makeText(getApplicationContext(), "name " +
-				// info.get("firstName").toString() +
-				// info.get("lastName").toString(),
-				// Toast.LENGTH_SHORT).show();
-				// Toast.makeText(getApplicationContext(), "phone " +
-				// info.get("phoneNumber").toString(),
-				// Toast.LENGTH_SHORT).show();
-				// Toast.makeText(getApplicationContext(), "email " +
-				// info.get("email").toString(),
-				// Toast.LENGTH_SHORT).show();
-				// Toast.makeText(getApplicationContext(), "home " +
-				// info.get("home").toString(),
-				// Toast.LENGTH_SHORT).show();
 				finish();
 			}
 		});
