@@ -19,7 +19,7 @@
     <string name="dbtools_add">Add</string>
     <string name="dbtools_ID">ID : </string>
     
-    <string name="single_emp_update">Update</string>
+    <string name="dbtools_animal_name">Pet Name</string><string name="dbtools_animal_owner">Owner Name</string><string name="dbtools_animal_rabies">Rabies Vaccine</string><string name="dbtools_animal_dhlpp">Canine Distemper Vaccine  (DHLPP)</string><string name="dbtools_animal_cpv2">Parvovirus  (CPV2)</string><string name="dbtools_animal_cav2">Canine Hepatitis / Adenovirus Vaccine (CAV-2)</string><string name="dbtools_animal_cpiv">Parainfluenza Vaccine (CPiV)</string><string name="dbtools_animal_bb">Bordetella Vaccine (Bb)</string><string name="dbtools_animal_lyme">Lyme Disease Vaccine</string><string name="dbtools_animal_vdates">Vaccination Dates</string><string name="dbtools_animal_vpass">Current</string><string name="single_emp_update">Update</string>
     
     
     
@@ -28,5 +28,16 @@
     <string name="entry_viewCustomers">Customers</string>
     <string name="entry_viewAnimals">Animals</string>
     <string name="entry_viewAppointment">Appointments</string>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 </resources>

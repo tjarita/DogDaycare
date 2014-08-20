@@ -22,6 +22,13 @@ public class DBanimal extends SQLiteOpenHelper{
 				"animalID INTEGER PRIMARY KEY," +
 				"animalName TEXT," +
 				"ownerID TEXT," +
+				"rabies," +
+				"cdv," +
+				"cpv2," +
+				"cav2,"+
+				"cpiv,"+
+				"bb," +
+				"lyme," +
 				"FOREIGN KEY(animalID) REFERENCES owner(ownerID)";
 		db.execSQL(query);
 	}
@@ -41,6 +48,14 @@ public class DBanimal extends SQLiteOpenHelper{
 		values.put("animalID", queryValues.get("animalID"));
 		values.put("animalName", queryValues.get("animalName"));
 		values.put("ownerID", queryValues.get("ownerID"));
+		values.put("rabies", queryValues.get("rabies"));
+		values.put("cdv", queryValues.get("cdv"));
+		values.put("cpv2", queryValues.get("cpv2"));
+		values.put("cav2", queryValues.get("cav2"));
+		values.put("cpiv", queryValues.get("cpiv"));
+		values.put("bb", queryValues.get("bb"));
+		values.put("lyme", queryValues.get("lyme"));
+
 
 		database.insert("animals", null, values);
 		database.close();
@@ -53,6 +68,13 @@ public class DBanimal extends SQLiteOpenHelper{
 		values.put("animalID", queryValues.get("animalID"));
 		values.put("animalName", queryValues.get("animalName"));
 		values.put("ownerID", queryValues.get("ownerID"));
+		values.put("rabies", queryValues.get("rabies"));
+		values.put("cdv", queryValues.get("cdv"));
+		values.put("cpv2", queryValues.get("cpv2"));
+		values.put("cav2", queryValues.get("cav2"));
+		values.put("cpiv", queryValues.get("cpiv"));
+		values.put("bb", queryValues.get("bb"));
+		values.put("lyme", queryValues.get("lyme"));
 
 		return database.update("animals", values, "animalID" + " = ?",
 				new String[] { queryValues.get("animalID") });
@@ -78,6 +100,13 @@ public class DBanimal extends SQLiteOpenHelper{
 				map.put("animalID", cursor.getString(0));
 				map.put("animalName", cursor.getString(1));
 				map.put("ownerID", cursor.getString(2));
+				map.put("rabies", cursor.getString(3));
+				map.put("cdv",cursor.getString(4));
+				map.put("cpv2", cursor.getString(5));
+				map.put("cav2", cursor.getString(6));
+				map.put("cpiv",cursor.getString(7));
+				map.put("bb", cursor.getString(8));
+				map.put("lyme", cursor.getString(9));
 
 				animalArrayList.add(map);
 
@@ -89,19 +118,26 @@ public class DBanimal extends SQLiteOpenHelper{
 	}
 
 	public HashMap<String, String> getAnimalInfo(String id) {
-		HashMap<String, String> animal = new HashMap<String, String>();
+		HashMap<String, String> map = new HashMap<String, String>();
 		SQLiteDatabase database = this.getReadableDatabase();
 		String selectQuery = "SELECT * FROM animals WHERE animalID='" + id
 				+ "'";
 		Cursor cursor = database.rawQuery(selectQuery, null);
 		if (cursor.moveToFirst()) {
 			do {
-				animal.put("animalID", cursor.getString(0));
-				animal.put("dogName", cursor.getString(1));
-				animal.put("ownerID", cursor.getString(2));
+				map.put("animalID", cursor.getString(0));
+				map.put("animalName", cursor.getString(1));
+				map.put("ownerID", cursor.getString(2));
+				map.put("rabies", cursor.getString(3));
+				map.put("cdv",cursor.getString(4));
+				map.put("cpv2", cursor.getString(5));
+				map.put("cav2", cursor.getString(6));
+				map.put("cpiv",cursor.getString(7));
+				map.put("bb", cursor.getString(8));
+				map.put("lyme", cursor.getString(9));
 			} while (cursor.moveToNext());
 		}
-		return animal;
+		return map;
 	}
 
 }

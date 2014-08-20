@@ -106,7 +106,7 @@
         android:layout_alignLeft="@+id/dbtools_HomeAddress"
         android:layout_below="@+id/dbtools_HomeAddress"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="textMultiLine" />
 
     <CheckBox
         android:id="@+id/addEmp_manager"

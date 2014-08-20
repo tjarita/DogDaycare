@@ -20,7 +20,7 @@ public class AddEmployees extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.dbtools_add);
+		setContentView(R.layout.dbtools_add_employee);
 
 	}
 
