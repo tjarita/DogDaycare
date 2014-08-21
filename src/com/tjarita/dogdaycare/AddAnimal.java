@@ -1,5 +1,6 @@
 package com.tjarita.dogdaycare;
 
+<<<<<<< HEAD
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -79,10 +80,24 @@ public class AddAnimal extends Activity {
 
 	private String convertMonth(int month) {
 		return new DateFormatSymbols().getMonths()[month];
+=======
+import android.app.Activity;
+import android.os.Bundle;
+
+public class AddAnimal extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		
+		
+>>>>>>> origin/master
 	}
 
 	@Override
 	protected void onResume() {
+<<<<<<< HEAD
 		super.onResume();
 
 		// ----Date popups----
@@ -217,4 +232,12 @@ public class AddAnimal extends Activity {
 		}
 	}
 
+=======
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+	
+	
+>>>>>>> origin/master
 }

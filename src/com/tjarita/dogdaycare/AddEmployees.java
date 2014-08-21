@@ -33,6 +33,7 @@ public class AddEmployees extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbtools_add_employee);
+<<<<<<< HEAD
 		initialize();
 
 		id = randomInt(1000, 1999);
@@ -46,6 +47,8 @@ public class AddEmployees extends Activity {
 			id = randomInt(10000, 99999);
 			admin.setVisibility(View.GONE);
 		}
+=======
+>>>>>>> origin/master
 
 	}
 

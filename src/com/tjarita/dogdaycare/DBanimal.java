@@ -17,6 +17,7 @@ public class DBanimal extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+<<<<<<< HEAD
 		String query = "CREATE TABLE animals("
 				+ " animalID INTEGER PRIMARY KEY, animalName TEXT, ownerID INTEGER, rabies TEXT, cdv TEXT, cav2 TEXT, cpiv TEXT, "
 				+ "cpv2 TEXT, bb TEXT,"
@@ -27,6 +28,21 @@ public class DBanimal extends SQLiteOpenHelper {
 		 * (P)arainfluenza / Kennel Cough CPV2 = (P)arvovirus 6-12 month
 		 * Vaccines Bb = Bordetella
 		 */
+=======
+		String query = 
+				"CREATE TABLE animals(" +
+				"animalID INTEGER PRIMARY KEY," +
+				"animalName TEXT," +
+				"ownerID TEXT," +
+				"rabies," +
+				"cdv," +
+				"cpv2," +
+				"cav2,"+
+				"cpiv,"+
+				"bb," +
+				"lyme," +
+				"FOREIGN KEY(animalID) REFERENCES owner(ownerID)";
+>>>>>>> origin/master
 		db.execSQL(query);
 	}
 
@@ -47,10 +63,19 @@ public class DBanimal extends SQLiteOpenHelper {
 		values.put("ownerID", queryValues.get("ownerID"));
 		values.put("rabies", queryValues.get("rabies"));
 		values.put("cdv", queryValues.get("cdv"));
+<<<<<<< HEAD
 		values.put("cav2", queryValues.get("cav2"));
 		values.put("cpiv", queryValues.get("cpiv"));
 		values.put("cpv2", queryValues.get("cpv2"));
 		values.put("bb", queryValues.get("bb"));
+=======
+		values.put("cpv2", queryValues.get("cpv2"));
+		values.put("cav2", queryValues.get("cav2"));
+		values.put("cpiv", queryValues.get("cpiv"));
+		values.put("bb", queryValues.get("bb"));
+		values.put("lyme", queryValues.get("lyme"));
+
+>>>>>>> origin/master
 
 		database.insert("animals", null, values);
 		database.close();
@@ -69,6 +94,10 @@ public class DBanimal extends SQLiteOpenHelper {
 		values.put("cav2", queryValues.get("cav2"));
 		values.put("cpiv", queryValues.get("cpiv"));
 		values.put("bb", queryValues.get("bb"));
+<<<<<<< HEAD
+=======
+		values.put("lyme", queryValues.get("lyme"));
+>>>>>>> origin/master
 
 		return database.update("animals", values, "animalID" + " = ?",
 				new String[] { queryValues.get("animalID") });
@@ -94,11 +123,20 @@ public class DBanimal extends SQLiteOpenHelper {
 				map.put("animalName", cursor.getString(1));
 				map.put("ownerID", cursor.getString(2));
 				map.put("rabies", cursor.getString(3));
+<<<<<<< HEAD
 				map.put("cdv", cursor.getString(4));
 				map.put("cpv2", cursor.getString(5));
 				map.put("cav2", cursor.getString(6));
 				map.put("cpiv", cursor.getString(7));
 				map.put("bb", cursor.getString(8));
+=======
+				map.put("cdv",cursor.getString(4));
+				map.put("cpv2", cursor.getString(5));
+				map.put("cav2", cursor.getString(6));
+				map.put("cpiv",cursor.getString(7));
+				map.put("bb", cursor.getString(8));
+				map.put("lyme", cursor.getString(9));
+>>>>>>> origin/master
 
 				animalArrayList.add(map);
 
@@ -121,6 +159,7 @@ public class DBanimal extends SQLiteOpenHelper {
 				map.put("animalName", cursor.getString(1));
 				map.put("ownerID", cursor.getString(2));
 				map.put("rabies", cursor.getString(3));
+<<<<<<< HEAD
 				map.put("cdv", cursor.getString(4));
 				map.put("cpv2", cursor.getString(5));
 				map.put("cav2", cursor.getString(6));
@@ -153,11 +192,23 @@ public class DBanimal extends SQLiteOpenHelper {
 
 				animalArrayList.add(map);
 
+=======
+				map.put("cdv",cursor.getString(4));
+				map.put("cpv2", cursor.getString(5));
+				map.put("cav2", cursor.getString(6));
+				map.put("cpiv",cursor.getString(7));
+				map.put("bb", cursor.getString(8));
+				map.put("lyme", cursor.getString(9));
+>>>>>>> origin/master
 			} while (cursor.moveToNext());
 
 		}
+<<<<<<< HEAD
 		// return contact list
 		return animalArrayList;
+=======
+		return map;
+>>>>>>> origin/master
 	}
 
 	public int getCount() {
