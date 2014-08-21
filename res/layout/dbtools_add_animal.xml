@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCCCCC"
+   >
+
+    <RelativeLayout
+        android:id="@+id/dbtools_animal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="15dp" >
+
+        <TextView
+            android:id="@+id/dbtools_animalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="@string/dbtools_animal_name"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalName"
+            android:layout_below="@+id/dbtools_animalName"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/dbtools_animalOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animal_name"
+            android:layout_below="@+id/dbtools_animal_name"
+            android:text="@string/dbtools_animal_owner"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalOwner"
+            android:layout_below="@+id/dbtools_animalOwner"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/dbtools_animalVaccinationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animal_owner"
+            android:layout_below="@+id/dbtools_animal_owner"
+            android:text="@string/dbtools_animal_vdates"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/dbtools_animalIDtext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/dbtools_animalOwner"
+            android:layout_alignBottom="@+id/dbtools_animalOwner"
+            android:layout_toRightOf="@+id/dbtools_animalOwner"
+            android:paddingLeft="20dp"
+            android:text="@string/dbtools_ID"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/dbtools_animalOwnerID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dbtools_animal_name"
+            android:layout_toRightOf="@+id/dbtools_animalIDtext2"
+            android:paddingLeft="2dp"
+            android:text="@string/dbtools_animal_ownerID"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_rabies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalVaccinationTitle"
+            android:layout_below="@+id/dbtools_animalVaccinationTitle"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="date" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/dbtools_animalRabies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animal_rabies"
+            android:layout_below="@+id/dbtools_animalVaccinationTitle"
+            android:text="@string/dbtools_animal_rabies"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <CheckBox
+            android:id="@+id/dbtools_animal_rabiesOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animal_rabies"
+            android:layout_toRightOf="@+id/dbtools_animal_rabies" />
+
+        <TextView
+            android:id="@+id/dbtools_animalCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/dbtools_animalVaccinationTitle"
+            android:layout_alignBottom="@+id/dbtools_animalVaccinationTitle"
+            android:layout_alignLeft="@+id/dbtools_animal_rabiesOK"
+            android:text="@string/dbtools_animal_vpass"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/dbtools_animalDistemper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalRabies"
+            android:layout_below="@+id/dbtools_animal_rabies"
+            android:text="@string/dbtools_animal_cdv"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_distemper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalDistemper"
+            android:layout_below="@+id/dbtools_animalDistemper"
+            android:ems="10"
+            android:inputType="date" />
+
+        <CheckBox
+            android:id="@+id/dbtools_animal_distemperOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animal_distemper"
+            android:layout_alignLeft="@+id/dbtools_animal_rabiesOK" />
+
+        <TextView
+            android:id="@+id/dbtools_animalAdenovirus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalDistemper"
+            android:layout_below="@+id/dbtools_animal_distemper"
+            android:text="@string/dbtools_animal_cav2"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_adenovirus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalAdenovirus"
+            android:layout_below="@+id/dbtools_animalAdenovirus"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/dbtools_animalParainfluenza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalAdenovirus"
+            android:layout_below="@+id/dbtools_animal_adenovirus"
+            android:text="@string/dbtools_animal_cpiv"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_parainfluenza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalParainfluenza"
+            android:layout_below="@+id/dbtools_animalParainfluenza"
+            android:ems="10"
+            android:inputType="date" />
+
+        <CheckBox
+            android:id="@+id/dbtools_animal_parainfluenzaOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animal_parainfluenza"
+            android:layout_alignLeft="@+id/dbtools_animal_adenovirusOK" />
+
+        <TextView
+            android:id="@+id/dbtools_animalParvovirus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalParainfluenza"
+            android:layout_below="@+id/dbtools_animal_parainfluenza"
+            android:text="@string/dbtools_animal_cpv2"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_parvovirus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalParvovirus"
+            android:layout_below="@+id/dbtools_animalParvovirus"
+            android:ems="10"
+            android:inputType="date" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animal_parvovirus"
+            android:layout_alignLeft="@+id/dbtools_animal_parainfluenzaOK" />
+
+        <TextView
+            android:id="@+id/dbtools_animalBordetella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalParvovirus"
+            android:layout_below="@+id/dbtools_animal_parvovirus"
+            android:text="@string/dbtools_animal_bb"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_animal_bordetella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animalBordetella"
+            android:layout_below="@+id/dbtools_animalBordetella"
+            android:ems="10"
+            android:inputType="date" />
+
+        <CheckBox
+            android:id="@+id/dbtools_animal_bordetellaOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animal_bordetella"
+            android:layout_alignLeft="@+id/checkBox1" />
+
+        <CheckBox
+            android:id="@+id/dbtools_animal_adenovirusOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/dbtools_animal_adenovirus"
+            android:layout_alignBottom="@+id/dbtools_animal_adenovirus"
+            android:layout_alignLeft="@+id/dbtools_animal_distemperOK" />
+
+        <TextView
+            android:id="@+id/dbtools_animalIDtext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/dbtools_animalName"
+            android:layout_alignLeft="@+id/dbtools_animalIDtext2"
+            android:paddingLeft="20dp"
+            android:text="@string/dbtools_ID"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/dbtools_animalID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dbtools_animalIDtext1"
+            android:layout_alignLeft="@+id/dbtools_animalOwnerID"
+            android:paddingLeft="2dp"
+            android:text="@string/dbtools_animal_ownerID"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/dbtools_animal_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dbtools_animal_bordetella"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@+id/dbtools_animalBordetella"
+            android:text="@string/dbtools_add" />
+
+    </RelativeLayout>
+
+</LinearLayout>

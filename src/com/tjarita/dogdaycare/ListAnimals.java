@@ -15,54 +15,65 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ListEmployees extends ListActivity {
+public class ListAnimals extends ListActivity {
 
-	TextView employeeID, title;
+	DBanimal dbTools = new DBanimal(this);
+	Intent goAdd = new Intent("com.tjarita.dogdaycare.ADDANIMAL");
+
+	TextView title;
 	Button add;
-	DBemployee dbTools = new DBemployee(this);
-	Intent i = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
 
+	ArrayList<HashMap<String, String>> animalList;
+	HashMap<String, String> info;
+
+
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbtools);
 		initialize();
+		
+
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		ArrayList<String> names = new ArrayList<String>();
+
 		Intent intent = getIntent();
 
-		// ----Add Employee----
+		if (intent.hasExtra("info"))
+			info = (HashMap<String, String>) intent
+					.getSerializableExtra("info");
+
+		// Toast.makeText(getApplicationContext(), info.get("ownerID"),
+		// Toast.LENGTH_SHORT).show();
+
+		// ----Add Animal Button----
 		add.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				Intent goAdd = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
+
+				goAdd.putExtra("ownerInfo", info);
 				startActivity(goAdd);
 			}
 		});
 
-		// ---- Retrive Employee or Customer List----
-		final ArrayList<HashMap<String, String>> employeeList;
-		if (intent.hasExtra("customer")) {
-			employeeList = dbTools.getAllCustomers();
-			add.setVisibility(View.GONE);
-			title.setText("Customer List");
-			i.putExtra("customer", true);
-		} else {
-			employeeList = dbTools.getAllEmployees();
-			title.setText("Employee List");
-		}
+		if (dbTools.getAllanimals().size() != 0) {
 
-		// ----Populate List----
-		if (employeeList.size() != 0) {
-			ArrayList<String> names = new ArrayList<String>();
+			if (intent.hasExtra("info")) { // Customer's animals
+				info = (HashMap<String, String>) intent // Assign only when info
+														// exists
+						.getSerializableExtra("info");
+				animalList = dbTools.getOwnerAnimals(info.get("ownerID"));
+			} else {
+				animalList = dbTools.getAllanimals(); // From Entry
+			}
 
-			// ----Get Names---- Note: Could use a custom adapter to avoid
-			// copying array
-			for (int i = 0; i < employeeList.size(); i++) {
-				names.add(employeeList.get(i).get("lastName").toString() + ", "
-						+ employeeList.get(i).get("firstName").toString());
+			for (int i = 0; i < animalList.size(); i++) {
+				names.add(animalList.get(i).get("animalName"));
 			}
 
 			this.setListAdapter(new ArrayAdapter<String>(this,
@@ -75,38 +86,31 @@ public class ListEmployees extends ListActivity {
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
-					// toast selected employee name
-					Toast.makeText(
-							getApplicationContext(),
-							employeeList.get(position).get("lastName")
-									+ ", "
-									+ employeeList.get(position)
-											.get("firstName").toString(),
-							Toast.LENGTH_SHORT).show();
-
-					i.putExtra("info", employeeList.get(position)); // Sending
-																	// employees
-																	// table
+					Intent i = new Intent("com.tjarita.dogdaycare.ADDANIMAL");
+					i.putExtra("info", animalList.get(position));
 					i.putExtra("update", true);
 					startActivity(i);
 
 				}
 
 			});
-		}
-		dbTools.close();
+		} // if
+
 	}
 
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+		dbTools.close();
 		finish();
 	}
 
 	private void initialize() {
 		title = (TextView) findViewById(R.id.dbtools_title);
 		add = (Button) findViewById(R.id.listEmp_Add);
+		title.setText("Animal List");
+
 	}
 
 }

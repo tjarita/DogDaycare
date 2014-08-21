@@ -2,24 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CCCCCC"
-    android:orientation="vertical"
-    android:paddingTop="1dp" >
+    android:background="#CCCCCC" >
 
        <RelativeLayout
+           android:id="@+id/add_employee"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:background="#FFFFFF"
-           android:gravity="center"
-           android:orientation="vertical"
-           android:padding="10dp" >
+           android:gravity="center_horizontal"
+           android:orientation="vertical" >
 
     <TextView
         android:id="@+id/dbtools_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="30dp"
         android:text="@string/dbtools_first" />
@@ -106,7 +102,7 @@
         android:layout_alignLeft="@+id/dbtools_HomeAddress"
         android:layout_below="@+id/dbtools_HomeAddress"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="textMultiLine" />
 
     <CheckBox
         android:id="@+id/addEmp_manager"
@@ -117,16 +113,6 @@
         android:text="@string/add_manager" />
 
     <TextView
-        android:id="@+id/addEmp_text_ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/addEmp_address"
-        android:layout_below="@+id/addEmp_address"
-        android:layout_marginTop="34dp"
-        android:text="@string/dbtools_ID"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/addEmp_ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,15 +121,35 @@
         android:layout_toRightOf="@+id/dbtools_Phone"
         android:textSize="22sp" />
 
+    <TextView
+        android:id="@+id/addEmp_text_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_address"
+        android:layout_below="@+id/addEmp_address"
+        android:layout_marginTop="15dp"
+        android:text="@string/dbtools_ID"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <Button
         android:id="@+id/addEmp_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/addEmp_text_ID"
+        android:layout_alignRight="@+id/dbtools_HomeAddress"
         android:layout_below="@+id/addEmp_ID"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:onClick="addNewStudent"
         android:text="@string/dbtools_save" />
+
+    <Button
+        android:id="@+id/addEmp_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addEmp_save"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/addEmp_delete"
+        android:text="@string/dbtools_animal" />
 
     <Button
         android:id="@+id/addEmp_delete"

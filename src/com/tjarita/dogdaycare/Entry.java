@@ -3,8 +3,6 @@ package com.tjarita.dogdaycare;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,13 +13,12 @@ public class Entry extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		// ----Hide Management Settings----
 		Button settings = (Button) findViewById(R.id.entry_admin);
-		// Button customer = (Button) findViewById(R.id.entry_registerOwner);
 		settings.setVisibility(View.GONE);
-
 		Intent intent = getIntent();
 
-		// ----Manager Settings----
+		// ----Show Management Settings----
 		if (intent.getStringExtra("admin").contains("1"))
 			settings.setVisibility(View.VISIBLE);
 		settings.setOnClickListener(new View.OnClickListener() {
@@ -58,15 +55,14 @@ public class Entry extends Activity {
 			}
 		});
 
-		// ----Add Animal----
-		Button animal = (Button) findViewById(R.id.entry_newAnimal);
+		// ----View Animal----
+		Button animal = (Button) findViewById(R.id.entry_viewAnimals);
 		animal.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent aa = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
-				aa.putExtra("animal", true);
-				startActivity(aa);
+				Intent va = new Intent("com.tjarita.dogdaycare.LISTANIMALS");
+				startActivity(va);
 			}
 		});
 

@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.tjarita.dogdaycare.Splash"
-            android:label="@string/app_name"
+            android:label="SO DOGE"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name="com.tjarita.dogdaycare.Entry"
-            android:label="@string/app_name" >
+            android:label="Welcome" >
             <intent-filter>
                 <action android:name="com.tjarita.dogdaycare.ENTRY" />
 
@@ -43,7 +43,7 @@
         </activity>
         <activity
             android:name="com.tjarita.dogdaycare.ListEmployees"
-            android:label="Employee List" >
+            android:label="All the cool kids" >
             <intent-filter>
                 <action android:name="com.tjarita.dogdaycare.LISTEMPLOYEES" />
 
@@ -51,8 +51,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.tjarita.dogdaycare.ListAnimals"
+            android:label="All the cool animals" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.LISTANIMALS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.tjarita.dogdaycare.AddEmployees"
-            android:label="Employee Add" >
+            android:label="Add this guy" >
             <intent-filter>
                 <action android:name="com.tjarita.dogdaycare.ADDEMPLOYEES" />
 
@@ -61,9 +70,18 @@
         </activity>
         <activity
             android:name="com.tjarita.dogdaycare.ViewSingleEmployee"
-            android:label="Employee View" >
+            android:label="This one guy" >
             <intent-filter>
                 <action android:name="com.tjarita.dogdaycare.VIEWSINGLEEMPLOYEE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tjarita.dogdaycare.AddAnimal"
+            android:label="Add a pet" >
+            <intent-filter>
+                <action android:name="com.tjarita.dogdaycare.ADDANIMAL" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

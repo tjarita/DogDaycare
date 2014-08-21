@@ -11,13 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Pin extends Activity{
-	DBemployee dbtools = new DBemployee(this);
+	DBemployee dbTools = new DBemployee(this);
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pin);
 		
-		if(dbtools.getAllEmployees().size() == 0){
+		if (dbTools.getAllEmployees().size() == 0) {
 			Intent initial = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
 			initial.putExtra("first", true);
 			startActivity(initial);
@@ -38,10 +38,14 @@ public class Pin extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if(dbtools.checkPIN( Integer.parseInt(password.getText().toString()) )){
+				if (password.getText().length() != 0
+						&& dbTools.checkPIN(Integer.parseInt(password.getText()
+						.toString()))) {
 					Intent okay = new Intent("com.tjarita.dogdaycare.ENTRY");
-					HashMap<String,String> employee = dbtools.getEmployeeInfo(password.getText().toString());
+					HashMap<String, String> employee = dbTools
+							.getEmployeeInfo(password.getText().toString());
 					
+					dbTools.close();
 					okay.putExtra("admin", employee.get("admin"));
 					okay.putExtra("PIN", Integer.parseInt(password.getText().toString()));
 					startActivity(okay);

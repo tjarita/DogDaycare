@@ -13,18 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="110dp"
         android:text="@string/pin_ask"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="40sp" />
-
-    <Button
-        android:id="@+id/pin_enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/pin_password"
-        android:layout_alignRight="@+id/pin_ask"
-        android:minWidth="120dp"
-        android:text="@string/pin_enter"
-        android:textSize="40sp" />
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <EditText
         android:id="@+id/pin_password"
@@ -32,9 +21,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/pin_ask"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="51dp"
         android:ems="10"
         android:inputType="numberPassword"
         android:minHeight="80dp" />
+
+    <Button
+        android:id="@+id/pin_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pin_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:minWidth="120dp"
+        android:text="@string/pin_enter" />
 
 </RelativeLayout>
