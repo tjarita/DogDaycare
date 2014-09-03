@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 
 public class AddEmployees extends Activity {
 
-	DBemployee dbtools = new DBemployee(this);
+	DBemployee dbTools = new DBemployee(this);
 	int id;
 	HashMap<String, String> update;
 	Intent intent;
@@ -33,7 +34,6 @@ public class AddEmployees extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbtools_add_employee);
-<<<<<<< HEAD
 		initialize();
 
 		id = randomInt(1000, 1999);
@@ -47,8 +47,9 @@ public class AddEmployees extends Activity {
 			id = randomInt(10000, 99999);
 			admin.setVisibility(View.GONE);
 		}
-=======
->>>>>>> origin/master
+		if (intent.hasExtra("add")) {
+			animal.setVisibility(View.GONE);
+		}
 
 	}
 
@@ -99,9 +100,9 @@ public class AddEmployees extends Activity {
 				info.put("home", address.getText().toString());
 
 				if (intent.getBooleanExtra("update", false))
-					dbtools.updateEmployee(info);
+					dbTools.updateEmployee(info);
 				else
-					dbtools.insertEmployee(info);
+					dbTools.insertEmployee(info);
 
 				finish();
 			}
@@ -111,7 +112,7 @@ public class AddEmployees extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				dbtools.deleteEmployee(Integer.toString(id));
+				dbTools.deleteEmployee(Integer.toString(id));
 				finish();
 			}
 		});
@@ -125,12 +126,22 @@ public class AddEmployees extends Activity {
 
 				listAnimal.putExtra("info", update); // Sending employees
 															// table
-				Toast.makeText(getApplicationContext(), update.get("ID"),
-						Toast.LENGTH_SHORT).show();
+
+				// Toast.makeText(getApplicationContext(),
+				// update.get("ID"),
+				// Toast.LENGTH_SHORT).show();
 				startActivity(listAnimal);
 			}
 		});
 
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		dbTools.close();
+		finish();
 	}
 
 	private void initialize() {
@@ -150,6 +161,9 @@ public class AddEmployees extends Activity {
 		intent = getIntent();
 		update = (HashMap<String, String>) intent.getSerializableExtra("info");
 
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
 	}
 
 	private int randomInt(int min, int max) {
@@ -157,7 +171,7 @@ public class AddEmployees extends Activity {
 		int rn;
 		do {
 			rn = rng.nextInt((max - min) + 1) + min;
-		} while (dbtools.checkPIN(rn)); // createPIN returns true if ID already
+		} while (dbTools.checkPIN(rn)); // createPIN returns true if ID already
 										// exists
 		return rn;
 	}

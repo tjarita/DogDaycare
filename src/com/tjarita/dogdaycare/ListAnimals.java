@@ -19,20 +19,19 @@ public class ListAnimals extends ListActivity {
 
 	DBanimal dbTools = new DBanimal(this);
 	Intent goAdd = new Intent("com.tjarita.dogdaycare.ADDANIMAL");
-
-	TextView title;
-	Button add;
+	Intent intent;
 
 	ArrayList<HashMap<String, String>> animalList;
 	HashMap<String, String> info;
 
+	TextView title;
+	Button add;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dbtools);
 		initialize();
-		
 
 	}
 
@@ -41,14 +40,18 @@ public class ListAnimals extends ListActivity {
 		super.onResume();
 		ArrayList<String> names = new ArrayList<String>();
 
-		Intent intent = getIntent();
-
-		if (intent.hasExtra("info"))
+		// ----Check Owner Info----
+		intent = getIntent();
+		if (intent.hasExtra("info")) {
 			info = (HashMap<String, String>) intent
 					.getSerializableExtra("info");
+			goAdd.putExtra("ownerInfo", info);
 
-		// Toast.makeText(getApplicationContext(), info.get("ownerID"),
-		// Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), info.get("ID"),
+					Toast.LENGTH_SHORT).show();
+		}
+		if (intent.hasExtra("view"))
+			add.setVisibility(View.GONE);
 
 		// ----Add Animal Button----
 		add.setOnClickListener(new View.OnClickListener() {
@@ -56,18 +59,15 @@ public class ListAnimals extends ListActivity {
 			@Override
 			public void onClick(View v) {
 
-				goAdd.putExtra("ownerInfo", info);
+				goAdd.putExtra("add", true);
 				startActivity(goAdd);
 			}
 		});
 
 		if (dbTools.getAllanimals().size() != 0) {
 
-			if (intent.hasExtra("info")) { // Customer's animals
-				info = (HashMap<String, String>) intent // Assign only when info
-														// exists
-						.getSerializableExtra("info");
-				animalList = dbTools.getOwnerAnimals(info.get("ownerID"));
+			if (intent.hasExtra("info")) { // Owner Info
+				animalList = dbTools.getOwnerAnimals(info.get("ID"));
 			} else {
 				animalList = dbTools.getAllanimals(); // From Entry
 			}
@@ -87,8 +87,17 @@ public class ListAnimals extends ListActivity {
 						int position, long id) {
 
 					Intent i = new Intent("com.tjarita.dogdaycare.ADDANIMAL");
-					i.putExtra("info", animalList.get(position));
+					i.putExtra("animalInfo", animalList.get(position)); // Sends
+																		// animals
+																		// table
+					i.putExtra("ownerInfo", info);
+
 					i.putExtra("update", true);
+
+					Toast.makeText(getApplicationContext(),
+							animalList.get(position).get("animalName"),
+							Toast.LENGTH_SHORT).show();
+
 					startActivity(i);
 
 				}
@@ -103,7 +112,7 @@ public class ListAnimals extends ListActivity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		dbTools.close();
-		finish();
+		// finish();
 	}
 
 	private void initialize() {

@@ -8,6 +8,8 @@ import android.widget.Button;
 
 public class Entry extends Activity {
 
+	DBanimal dbTools = new DBanimal(this);
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,18 +21,21 @@ public class Entry extends Activity {
 		Intent intent = getIntent();
 
 		// ----Show Management Settings----
-		if (intent.getStringExtra("admin").contains("1"))
+		if (intent.hasExtra("admin")
+				&& intent.getStringExtra("admin").contains("1")) {
 			settings.setVisibility(View.VISIBLE);
-		settings.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				Intent s = new Intent("com.tjarita.dogdaycare.LISTEMPLOYEES");
-				startActivity(s);
+			settings.setOnClickListener(new View.OnClickListener() {
 
-			}
-		});
+				@Override
+				public void onClick(View v) {
+					Intent s = new Intent(
+							"com.tjarita.dogdaycare.LISTEMPLOYEES");
+					startActivity(s);
 
+				}
+			});
+		}
 		// ----Add Customer----
 		Button customer = (Button) findViewById(R.id.entry_newCustomer);
 		customer.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +44,7 @@ public class Entry extends Activity {
 			public void onClick(View v) {
 				Intent ac = new Intent("com.tjarita.dogdaycare.ADDEMPLOYEES");
 				ac.putExtra("customer", true);
+				ac.putExtra("add", true);
 				startActivity(ac);
 			}
 		});
@@ -62,6 +68,7 @@ public class Entry extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent va = new Intent("com.tjarita.dogdaycare.LISTANIMALS");
+				va.putExtra("view", true);
 				startActivity(va);
 			}
 		});
@@ -75,6 +82,17 @@ public class Entry extends Activity {
 				Intent aap = new Intent("com.tjarita.dogdaycare.ADDAPPOINTMENT");
 				aap.putExtra("customer", true);
 				startActivity(aap);
+			}
+		});
+
+		// ----Drop Table----
+		Button drop = (Button) findViewById(R.id.entry_drop);
+		drop.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dbTools.onUpgrade(null, 0, 0);
+				dbTools.close();
 			}
 		});
 

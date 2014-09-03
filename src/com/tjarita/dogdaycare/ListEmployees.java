@@ -76,13 +76,13 @@ public class ListEmployees extends ListActivity {
 						int position, long id) {
 
 					// toast selected employee name
-					Toast.makeText(
-							getApplicationContext(),
-							employeeList.get(position).get("lastName")
-									+ ", "
-									+ employeeList.get(position)
-											.get("firstName").toString(),
-							Toast.LENGTH_SHORT).show();
+					// Toast.makeText(
+					// getApplicationContext(),
+					// employeeList.get(position).get("lastName")
+					// + ", "
+					// + employeeList.get(position)
+					// .get("firstName").toString(),
+					// Toast.LENGTH_SHORT).show();
 
 					i.putExtra("info", employeeList.get(position)); // Sending
 																	// employees

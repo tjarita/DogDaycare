@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CCCCCC"
-<<<<<<< HEAD
+    android:fillViewport="true" 
    >
 
     <RelativeLayout
@@ -13,32 +13,15 @@
         android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingTop="15dp" >
-=======
-    android:orientation="vertical"
-    android:paddingTop="1dp" >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp" >
->>>>>>> origin/master
+        android:paddingTop="15dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="horizontal" >
 
         <TextView
             android:id="@+id/dbtools_animalName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
             android:clickable="false"
-=======
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="30dp"
->>>>>>> origin/master
             android:text="@string/dbtools_animal_name"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -49,14 +32,7 @@
             android:layout_alignLeft="@+id/dbtools_animalName"
             android:layout_below="@+id/dbtools_animalName"
             android:ems="10"
-<<<<<<< HEAD
             android:inputType="textPersonName" />
-=======
-            android:inputType="textPersonName" >
-
-            <requestFocus />
-        </EditText>
->>>>>>> origin/master
 
         <TextView
             android:id="@+id/dbtools_animalOwner"
@@ -68,11 +44,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <EditText
-<<<<<<< HEAD
             android:id="@+id/dbtools_animal_owner"
-=======
-            android:id="@+id/editText1"
->>>>>>> origin/master
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/dbtools_animalOwner"
@@ -81,14 +53,13 @@
             android:inputType="textPersonName" />
 
         <TextView
-<<<<<<< HEAD
             android:id="@+id/dbtools_animalVaccinationTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/dbtools_animal_owner"
             android:layout_below="@+id/dbtools_animal_owner"
             android:text="@string/dbtools_animal_vdates"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/dbtools_animalIDtext2"
@@ -119,9 +90,10 @@
             android:layout_below="@+id/dbtools_animalVaccinationTitle"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="date" >
+            android:focusableInTouchMode="false" 
+            android:inputType="date|none" >
 
-            <requestFocus />
+            
         </EditText>
 
         <TextView
@@ -166,6 +138,7 @@
             android:layout_alignLeft="@+id/dbtools_animalDistemper"
             android:layout_below="@+id/dbtools_animalDistemper"
             android:ems="10"
+            android:focusableInTouchMode="false" 
             android:inputType="date" />
 
         <CheckBox
@@ -191,7 +164,8 @@
             android:layout_alignLeft="@+id/dbtools_animalAdenovirus"
             android:layout_below="@+id/dbtools_animalAdenovirus"
             android:ems="10"
-            android:inputType="date" />
+            android:focusableInTouchMode="false" 
+            android:inputType="date|none" />
 
         <TextView
             android:id="@+id/dbtools_animalParainfluenza"
@@ -209,6 +183,7 @@
             android:layout_alignLeft="@+id/dbtools_animalParainfluenza"
             android:layout_below="@+id/dbtools_animalParainfluenza"
             android:ems="10"
+            android:focusableInTouchMode="false" 
             android:inputType="date" />
 
         <CheckBox
@@ -234,10 +209,11 @@
             android:layout_alignLeft="@+id/dbtools_animalParvovirus"
             android:layout_below="@+id/dbtools_animalParvovirus"
             android:ems="10"
+            android:focusableInTouchMode="false" 
             android:inputType="date" />
 
         <CheckBox
-            android:id="@+id/checkBox1"
+            android:id="@+id/dbtools_animal_parvovirusOK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_parvovirus"
@@ -259,6 +235,7 @@
             android:layout_alignLeft="@+id/dbtools_animalBordetella"
             android:layout_below="@+id/dbtools_animalBordetella"
             android:ems="10"
+            android:focusableInTouchMode="false" 
             android:inputType="date" />
 
         <CheckBox
@@ -266,7 +243,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_bordetella"
-            android:layout_alignLeft="@+id/checkBox1" />
+            android:layout_alignLeft="@+id/dbtools_animal_parvovirusOK" />
 
         <CheckBox
             android:id="@+id/dbtools_animal_adenovirusOK"
@@ -301,28 +278,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dbtools_animal_bordetella"
-            android:layout_marginTop="18dp"
             android:layout_toRightOf="@+id/dbtools_animalBordetella"
             android:text="@string/dbtools_add" />
-=======
-            android:id="@+id/dbtools_animalOwnerID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dbtools_animalOwner"
-            android:layout_toRightOf="@+id/editText1"
-            android:text="@string/dbtools_ID"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/dbtools_animalVaccinationTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText1"
-            android:layout_below="@+id/editText1"
-            android:text="@string/dbtools_animal_vdates"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
->>>>>>> origin/master
 
     </RelativeLayout>
 
-</LinearLayout>
+</ScrollView>
