@@ -141,7 +141,6 @@ public class AddEmployees extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 		dbTools.close();
-		finish();
 	}
 
 	private void initialize() {

@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class ListAnimals extends ListActivity {
 
 	DBanimal dbTools = new DBanimal(this);
+	DBemployee dbToolsEmp = new DBemployee(this);
 	Intent goAdd = new Intent("com.tjarita.dogdaycare.ADDANIMAL");
 	Intent intent;
 
@@ -90,7 +91,13 @@ public class ListAnimals extends ListActivity {
 					i.putExtra("animalInfo", animalList.get(position)); // Sends
 																		// animals
 																		// table
-					i.putExtra("ownerInfo", info);
+					if (intent.hasExtra("view")) {
+						HashMap<String, String> ownerInfo = dbToolsEmp
+								.getEmployeeInfo((animalList.get(position)
+										.get("ownerID")));
+						i.putExtra("ownerInfo", ownerInfo);
+					} else
+						i.putExtra("ownerInfo", info);
 
 					i.putExtra("update", true);
 
