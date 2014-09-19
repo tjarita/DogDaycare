@@ -73,17 +73,7 @@ public class Entry extends Activity {
 			}
 		});
 
-		// ----Add Appointment----
-		Button appointment = (Button) findViewById(R.id.entry_newAppointment);
-		appointment.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				Intent aap = new Intent("com.tjarita.dogdaycare.ADDAPPOINTMENT");
-				aap.putExtra("customer", true);
-				startActivity(aap);
-			}
-		});
 
 		// ----Drop Table----
 		Button drop = (Button) findViewById(R.id.entry_drop);

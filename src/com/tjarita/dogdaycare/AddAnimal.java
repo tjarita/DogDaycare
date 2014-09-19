@@ -1,6 +1,5 @@
 package com.tjarita.dogdaycare;
 
-import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,16 +15,13 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class AddAnimal extends Activity {
 
@@ -51,8 +47,9 @@ public class AddAnimal extends Activity {
 	TextView animalID, ownerID, animalName, ownerName, currentTitle;
 	CheckBox checkRabies, checkDistemper, checkAdenovirus, checkParainfluenza,
 			checkParvovirus, checkBordetella;
-	Button add;
+	Button add, appointment;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,6 +58,8 @@ public class AddAnimal extends Activity {
 		initializeButtons();
 		if (intent.hasExtra("add")) {
 			hideChecks();
+			appointment.setVisibility(View.GONE);
+
 			// Set new animal ID
 			aID = dbTools.getCount() + 1;
 			animalID.setText(Integer.toString(aID));
@@ -70,6 +69,9 @@ public class AddAnimal extends Activity {
 					.getSerializableExtra("animalInfo");
 			updateAnimalText();
 			showChecks();
+
+			add.setText("update");
+
 		}
 	}
 
@@ -107,6 +109,8 @@ public class AddAnimal extends Activity {
 		checkBordetella = (CheckBox) findViewById(R.id.dbtools_animal_bordetellaOK);
 
 		add = (Button) findViewById(R.id.dbtools_animal_add);
+		appointment = (Button) findViewById(R.id.dbtools_animal_appointment);
+
 
 		// Get selected owner + animal info
 		intent = getIntent();
@@ -191,7 +195,7 @@ public class AddAnimal extends Activity {
 
 		});
 
-		// Fill map and save
+		// ---- Save / Update ----
 		add.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -207,12 +211,31 @@ public class AddAnimal extends Activity {
 				newAnimal.put("cpv2", parvovirus.getText().toString());
 				newAnimal.put("bb", bordetella.getText().toString());
 
+				if (intent.hasExtra("add"))
 				dbTools.insertAnimal(newAnimal);
+				else
+					dbTools.updateAnimal(newAnimal);
+
 				dbTools.close();
 				finish();
 			}
 		});
 
+		// ---- Add Appointment ----
+		appointment.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent addAppt = new Intent(
+						"com.tjarita.dogdaycare.ADDAPPOINTMENT");
+				addAppt.putExtra("ownerInfo", ownerInfo);
+				addAppt.putExtra("animalInfo", animalInfo);
+				startActivity(addAppt);
+
+			}
+		});
+
+		// ---- Enable keyboard for animal name ----
 		animalName.setOnClickListener(new OnClickListener() {
 
 			@Override

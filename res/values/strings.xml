@@ -19,7 +19,7 @@
     <string name="dbtools_add">Add</string>
     <string name="dbtools_ID">ID : </string>
     
-    <string name="dbtools_animal_name">Pet Name</string><string name="dbtools_animal_owner">Owner Name</string><string name="dbtools_animal_rabies">Rabies</string><string name="dbtools_animal_cdv">Distemper (CDV)</string><string name="dbtools_animal_cpv2">Parvovirus  (CPV2)</string><string name="dbtools_animal_cav2">Adenovirus / Canine Hepatitis (CAV-2)</string><string name="dbtools_animal_cpiv">Parainfluenza (CPiV)</string><string name="dbtools_animal_bb">Bordetella (Bb)</string><string name="dbtools_animal_lyme">Lyme Disease Vaccine</string><string name="dbtools_animal_vdates">Vaccination Dates</string><string name="dbtools_animal_vpass">Current</string><string name="dbtools_animal_ownerID">0000</string><string name="single_emp_update">Update</string>
+    <string name="dbtools_animal">Registered Animals</string><string name="dbtools_animal_name">Pet Name :</string><string name="dbtools_animal_owner">Owner Name :</string><string name="dbtools_animal_rabies">Rabies</string><string name="dbtools_animal_cdv">Distemper (CDV)</string><string name="dbtools_animal_cpv2">Parvovirus  (CPV2)</string><string name="dbtools_animal_cav2">Adenovirus / Canine Hepatitis (CAV-2)</string><string name="dbtools_animal_cpiv">Parainfluenza (CPiV)</string><string name="dbtools_animal_bb">Bordetella (Bb)</string><string name="dbtools_animal_lyme">Lyme Disease Vaccine</string><string name="dbtools_animal_vdates">Vaccination Dates</string><string name="dbtools_animal_vpass">Current</string><string name="dbtools_animal_ownerID">0000</string><string name="dbtools_animal_appointment">Schedule Appointment</string><string name="dbtools_appointment_start">Start Date : </string><string name="dbtools_appointment_end">End date :</string><string name="dbtools_appointment_tempName">Dumplekin</string><string name="dbtools_appointment_tempName2">Tosh</string><string name="dbtools_appointment_notes">Notes :</string><string name="dbtools_appointment_save">Save</string><string name="dbtools_appointment_start_time">Start Time :</string><string name="dbtools_appointment_end_time">End Time :</string><string name="single_emp_update">Update</string>
     
     
     
@@ -28,7 +28,16 @@
     <string name="entry_viewCustomers">Customers</string>
     <string name="entry_viewAnimals">Animals</string>
     <string name="entry_viewAppointment">Appointments</string>
-    <string name="dbtools_animal">Registered Animals</string>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

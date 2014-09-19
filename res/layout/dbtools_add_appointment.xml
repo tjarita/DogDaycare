@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addApptScroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentTop="true" >
+
+    <RelativeLayout
+        android:id="@+id/addApptRelative"
+        android:layout_width="match_parent"
+        android:layout_height="1000dp" >
+
+        <TextView
+            android:id="@+id/dbtools_apptOwnerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptPetName"
+            android:layout_below="@+id/dbtools_apptPetName"
+            android:layout_marginTop="38dp"
+            android:text="@string/dbtools_animal_owner"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/dbtools_apptPetName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="27dp"
+            android:text="@string/dbtools_animal_name"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_appt_pet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptOwnerName"
+            android:layout_below="@+id/dbtools_apptPetName"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/dbtools_appt_owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptOwnerName"
+            android:layout_below="@+id/dbtools_apptOwnerName"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/dbtools_apptStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_appt_owner"
+            android:layout_below="@+id/dbtools_appt_owner"
+            android:layout_marginTop="43dp"
+            android:text="@string/dbtools_appointment_start"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_appt_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptNotes"
+            android:layout_below="@+id/dbtools_apptNotes"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minLines="4" />
+
+        <Button
+            android:id="@+id/dbtools_appt_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_appt_notes"
+            android:layout_below="@+id/dbtools_appt_notes"
+            android:text="@string/dbtools_appointment_save" />
+
+        <LinearLayout
+            android:id="@+id/dbtools_appt_startBox"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_alignLeft="@+id/dbtools_apptStart"
+            android:layout_alignRight="@+id/dbtools_appt_start_time"
+            android:layout_below="@+id/dbtools_apptStart"
+            android:orientation="vertical" >
+
+            <customViews.CalendarViewScrollable
+                android:id="@+id/dbtools_appt_start_date"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="69.57"
+                android:showWeekNumber="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dbtools_apptStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptStart"
+            android:layout_below="@+id/dbtools_appt_startBox"
+            android:layout_marginTop="22dp"
+            android:text="@string/dbtools_appointment_start_time"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_appt_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptStartTime"
+            android:layout_below="@+id/dbtools_apptStartTime"
+            android:ems="10"
+            android:focusableInTouchMode="false"
+            android:inputType="time" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/dbtools_apptEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_appt_start_time"
+            android:layout_below="@+id/dbtools_appt_start_time"
+            android:layout_marginTop="20dp"
+            android:text="@string/dbtools_appointment_end"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <LinearLayout
+            android:id="@+id/dbtools_appt_endBox"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_alignLeft="@+id/dbtools_apptEndDate"
+            android:layout_alignRight="@+id/dbtools_appt_start_time"
+            android:layout_below="@+id/dbtools_apptEndDate"
+            android:orientation="vertical" >
+
+            <customViews.CalendarViewScrollable
+                android:id="@+id/dbtools_appt_end_date"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:showWeekNumber="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dbtools_apptEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_appt_endBox"
+            android:layout_below="@+id/dbtools_appt_endBox"
+            android:layout_marginTop="20dp"
+            android:text="@string/dbtools_appointment_end_time"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/dbtools_appt_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptNotes"
+            android:layout_below="@+id/dbtools_apptEndTime"
+            android:ems="10"
+            android:focusableInTouchMode="false"
+            android:inputType="time" />
+
+        <TextView
+            android:id="@+id/dbtools_apptNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_apptEndTime"
+            android:layout_below="@+id/dbtools_appt_end_time"
+            android:layout_marginTop="20dp"
+            android:text="@string/dbtools_appointment_notes"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+</ScrollView>

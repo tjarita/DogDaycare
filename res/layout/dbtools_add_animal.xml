@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/dbtools_animal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_horizontal"
         android:orientation="vertical"
@@ -110,7 +110,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_rabies"
-            android:layout_toRightOf="@+id/dbtools_animal_rabies" />
+            android:layout_toRightOf="@+id/dbtools_animal_rabies"
+            android:clickable="false" />
 
         <TextView
             android:id="@+id/dbtools_animalCurrent"
@@ -146,7 +147,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_distemper"
-            android:layout_alignLeft="@+id/dbtools_animal_rabiesOK" />
+            android:layout_alignLeft="@+id/dbtools_animal_rabiesOK"
+            android:clickable="false" />
 
         <TextView
             android:id="@+id/dbtools_animalAdenovirus"
@@ -191,7 +193,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_parainfluenza"
-            android:layout_alignLeft="@+id/dbtools_animal_adenovirusOK" />
+            android:layout_alignLeft="@+id/dbtools_animal_adenovirusOK"
+            android:clickable="false" />
 
         <TextView
             android:id="@+id/dbtools_animalParvovirus"
@@ -217,7 +220,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_parvovirus"
-            android:layout_alignLeft="@+id/dbtools_animal_parainfluenzaOK" />
+            android:layout_alignLeft="@+id/dbtools_animal_parainfluenzaOK"
+            android:clickable="false" />
 
         <TextView
             android:id="@+id/dbtools_animalBordetella"
@@ -243,7 +247,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/dbtools_animal_bordetella"
-            android:layout_alignLeft="@+id/dbtools_animal_parvovirusOK" />
+            android:layout_alignLeft="@+id/dbtools_animal_parvovirusOK"
+            android:clickable="false" />
 
         <CheckBox
             android:id="@+id/dbtools_animal_adenovirusOK"
@@ -251,7 +256,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/dbtools_animal_adenovirus"
             android:layout_alignBottom="@+id/dbtools_animal_adenovirus"
-            android:layout_alignLeft="@+id/dbtools_animal_distemperOK" />
+            android:layout_alignLeft="@+id/dbtools_animal_distemperOK"
+            android:clickable="false" />
 
         <TextView
             android:id="@+id/dbtools_animalIDtext1"
@@ -267,8 +273,9 @@
             android:id="@+id/dbtools_animalID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/dbtools_animalIDtext1"
             android:layout_alignBottom="@+id/dbtools_animalIDtext1"
-            android:layout_alignLeft="@+id/dbtools_animalOwnerID"
+            android:layout_toRightOf="@+id/dbtools_animalIDtext1"
             android:paddingLeft="2dp"
             android:text="@string/dbtools_animal_ownerID"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -277,9 +284,18 @@
             android:id="@+id/dbtools_animal_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animal_bordetella"
             android:layout_below="@+id/dbtools_animal_bordetella"
-            android:layout_toRightOf="@+id/dbtools_animalBordetella"
             android:text="@string/dbtools_add" />
+
+        <Button
+            android:id="@+id/dbtools_animal_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/dbtools_animal_add"
+            android:layout_below="@+id/dbtools_animal_add"
+            android:layout_toLeftOf="@+id/dbtools_animal_bordetellaOK"
+            android:text="@string/dbtools_animal_appointment" />
 
     </RelativeLayout>
 
